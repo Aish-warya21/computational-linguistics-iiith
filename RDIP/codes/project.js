@@ -34,6 +34,7 @@ function selection()
     document.getElementById("getans").innerHTML=""
     document.getElementById("reform").style.visibility="hidden";
     document.getElementById("check").style.visibility="hidden";
+    document.getElementById("getcrt").style.visibility="hidden";
     document.getElementById("getcrt").innerHTML="Get Correct Sentence";
 	count=0
 
@@ -68,7 +69,7 @@ if(document.getElementById("english").selected)
             {
                 document.getElementById("reform").style.visibility="visible";
             }
-            var n=String(document.getElementById("disp3").innerHTML).replace(/\s+$/,"");
+            var m=String(document.getElementById("disp3").innerHTML).replace(/\s+$/, "");
             n1=n.split(" ");
             if(h1.length == n1.length)
             {
@@ -108,7 +109,7 @@ if(document.getElementById("english").selected)
             {
                 document.getElementById("reform").style.visibility="visible";
             }
-            var n=String(document.getElementById("disp3").innerHTML).replace(/\s+$/,"");
+            var m=String(document.getElementById("disp3").innerHTML).replace(/\s+$/, "");
             n1=n.split(" ");
             if(h1.length == n1.length)
             {
@@ -145,7 +146,9 @@ function Reform()
 }
 
 function check(){
-    var z=String(document.getElementById("disp3").innerHTML).replace(/\s+$/,"");
+    document.getElementById("getcrt").innerHTML="Get Correct Sentence";
+    document.getElementById("getans").innerHTML=""   
+    var z=String(document.getElementById("disp3").innerHTML).replace(/\s+$/, "")
     temp=0;
     temp1=0;
     if(document.getElementById("english").selected)
@@ -210,17 +213,17 @@ function toggle()
                 document.getElementById("getcrt").innerHTML="Hide Correct Sentence"
             }
         }
-        else if(document.getElementById("getcrt").innerHTML="Hide Correct Sentence")
+        else if(document.getElementById("getcrt").innerHTML == "Hide Correct Sentence")
         {
             document.getElementById("getans").innerHTML=""
             document.getElementById("getcrt").innerHTML="Get Answers"
         }
-        else if(document.getElementById("getcrt").innerHTML="Get Answers")
+        else if(document.getElementById("getcrt").innerHTML == "Get Answers")
         {
             for(i=0;i<temp.length;i++)
             {
                 document.getElementById("getans").innerHTML+=temp[i]+"<br>";
-                document.getElementById("getcrt").innerHTML="Hide Correct Sentence"
+                document.getElementById("getcrt").innerHTML = "Hide Correct Sentence"
             }
         }
     }
@@ -234,14 +237,14 @@ function toggle()
                 document.getElementById("getcrt").innerHTML="Hide Correct Sentence"
             }
         }
-        else if(document.getElementById("getcrt").innerHTML="Hide Correct Sentence")
+        else if(document.getElementById("getcrt").innerHTML == "Hide Correct Sentence")
         {
             document.getElementById("getans").innerHTML=""
             document.getElementById("getcrt").innerHTML="Get Answers"
         }
-        else if(document.getElementById("getcrt").innerHTML="Get Answers")
+        else if(document.getElementById("getcrt").innerHTML == "Get Answers")
         {
-            for(i=0;i<temp.length;i++)
+            for(i=0;i<temp1.length;i++)
             {
                 document.getElementById("getans").innerHTML+=temp1[i]+"<br>";
                 document.getElementById("getcrt").innerHTML="Hide Correct Sentence"
