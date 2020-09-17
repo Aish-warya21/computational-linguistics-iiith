@@ -48,7 +48,7 @@ if(document.getElementById("english").selected)
     for(i=0;i<e1.length;i++)
     {
 		let button = document.createElement("button");
-        button.innerHTML = e1[i]
+		button.id='button'+i;
         body.appendChild(button);
 
         button.addEventListener ("click",function()
@@ -82,6 +82,7 @@ if(document.getElementById("english").selected)
     for(i=0;i<h1.length;i++)
     {
         let button = document.createElement("button");
+        button.id='button'+i;
         button.innerHTML = h1[i]
         body.appendChild(button)
 
@@ -106,3 +107,15 @@ if(document.getElementById("english").selected)
 	    document.getElementById("disp1").innerHTML=""
     }
 }  
+
+function Reform()
+{
+    for(i=0;i<e1.length||i<h1.length;i++)
+	{
+        if(document.getElementById('button'+i).style.visibility=="hidden")
+    	document.getElementById('button'+i).style.visibility="visible";
+	    document.getElementById('disp2').innerHTML=""
+	    document.getElementById('disp3').innerHTML=""
+	    document.getElementById('reform').style.visibility="hidden"
+    }
+}
